@@ -1,4 +1,4 @@
-class Node:
+class Node:#sss
     def __init__(self, num):
         self.num = num
         self.next = None
@@ -19,7 +19,13 @@ class Stack:
 
     # Quitar el primer elemento de la lista y regresar su valor
     def pop(self):
-        return  # num del elemento que quitaron
+        cur = self.root
+        while cur is not None:
+            cur = cur.next
+        return cur
+
+
+        #return  # num del elemento que quitaron
 
     def print_nodes(self):
         cur = self.root
@@ -45,7 +51,11 @@ class Queue:
 
     # Quitar el último elemento de la lista y regresar su valor
     def pop(self):
-        return  # num del elemento que quitaron
+        cur = self.root
+        while (cur.next != None):
+            cur = cur.next
+        return cur
+        #return  # num del elemento que quitaron
 
     def print_nodes(self):
         cur = self.root

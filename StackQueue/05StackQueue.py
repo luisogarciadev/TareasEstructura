@@ -17,9 +17,12 @@ class Stack:
                 cur = cur.next
             cur.next = Node(num)
 
-    # Quitar el primer elemento de la lista y regresar su valor
+    
     def pop(self):
-        return  # num del elemento que quitaron
+        self.root= cur
+        print(cur.num)
+        self.root = cur.next
+        return
 
     def print_nodes(self):
         cur = self.root
@@ -43,9 +46,12 @@ class Queue:
                 cur = cur.next
             cur.next = Node(num)
 
-    # Quitar el último elemento de la lista y regresar su valor
+   
     def pop(self):
-        return  # num del elemento que quitaron
+        cur = cur.next.next
+        print(cur.num)
+        cur = None
+        return 
 
     def print_nodes(self):
         cur = self.root

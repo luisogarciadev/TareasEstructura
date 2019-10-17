@@ -2,6 +2,7 @@ class Node:
     def __init__(self, num):
         self.num = num
         self.next = None
+        self.prev = None
 
 
 class Stack:
@@ -19,7 +20,10 @@ class Stack:
 
     # Quitar el primer elemento de la lista y regresar su valor
     def pop(self):
-        return  # num del elemento que quitaron
+        cur = self.root
+        self.root = cur.next
+        return self.root  # num del elemento que quitaron
+    
 
     def print_nodes(self):
         cur = self.root
@@ -45,7 +49,15 @@ class Queue:
 
     # Quitar el último elemento de la lista y regresar su valor
     def pop(self):
-        return  # num del elemento que quitaron
+        cur = self.root
+        while cur.next != None:
+            if cur.next.next == None:
+                d = cur.next
+                cur.next = cur.next.next
+                return d
+            cur =cur.next
+        
+    
 
     def print_nodes(self):
         cur = self.root
@@ -54,3 +66,19 @@ class Queue:
             p += str(cur.num) + ", "
             cur = cur.next
         print(p[:-2])
+
+
+munch = Stack()
+
+munch.push(3)
+munch.push(6)
+munch.push(9)
+munch.push(12)
+
+munch.print_nodes()
+munch.pop()
+munch.print_nodes()
+
+
+
+        

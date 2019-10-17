@@ -18,8 +18,10 @@ class Stack:
             cur.next = Node(num)
 
     # Quitar el primer elemento de la lista y regresar su valor
-    def pop(self):
-        return  # num del elemento que quitaron
+    def pop(self, num):
+        if num(self.stack) < 1:
+            return None
+        return self.stack.popI()# num del elemento que quitaron
 
     def print_nodes(self):
         cur = self.root
